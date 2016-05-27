@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LittleBox</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="start">Start time</string>
+    <string name="end">End time</string>
+    <string name="set">Set working hours</string>
+</resources>
