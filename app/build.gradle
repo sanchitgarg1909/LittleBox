@@ -18,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/androidTest/assets/'] } }
 }
 
 dependencies {
@@ -33,11 +34,22 @@ dependencies {
         // hasn't moved to Marshmallow yet)
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+    androidTestCompile('com.android.support.test:rules:0.5') {
+        // Necessary if your app targets Marshmallow (since the test runner
+        // hasn't moved to Marshmallow yet)
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.1') {
         // Necessary if your app targets Marshmallow (since Espresso
         // hasn't moved to Marshmallow yet)
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude module: 'support-v4'
     }
+    androidTestCompile 'com.squareup.retrofit2:retrofit-mock:2.0.2'
+    androidTestCompile('com.squareup.okhttp:mockwebserver:2.7.0')
+
     compile 'com.android.support:appcompat-v7:23.1.1'
+
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 }
