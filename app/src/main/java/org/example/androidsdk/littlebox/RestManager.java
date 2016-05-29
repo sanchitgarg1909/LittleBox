@@ -5,19 +5,17 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestManager {
-    private GetWorkingHours getWorkingHours;
-    OkHttpClient client;
+    private Retrofit retrofit;
 
-    public GetWorkingHours getWorkingHours() {
-        client = new OkHttpClient();
-        if (getWorkingHours==null){
-            Retrofit retrofit = new Retrofit.Builder()
+    public Retrofit getRetrofit() {
+        OkHttpClient client = new OkHttpClient();
+        if (retrofit==null){
+            retrofit = new Retrofit.Builder()
                     .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build();
-            getWorkingHours = retrofit.create(GetWorkingHours.class);
         }
-        return getWorkingHours;
+        return retrofit;
     }
 }

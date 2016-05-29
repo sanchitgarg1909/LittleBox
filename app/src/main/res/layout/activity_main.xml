@@ -81,4 +81,16 @@
         android:layout_marginTop="20dp"
         android:padding="5dp"
         />
+    <Button
+        android:id="@+id/save_button"
+        android:layout_below="@+id/set_button"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="@string/save"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        />
 </RelativeLayout>

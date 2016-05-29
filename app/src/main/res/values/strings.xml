@@ -5,4 +5,5 @@
     <string name="start">Start time</string>
     <string name="end">End time</string>
     <string name="set">Set working hours</string>
+    <string name="save">Save</string>
 </resources>
